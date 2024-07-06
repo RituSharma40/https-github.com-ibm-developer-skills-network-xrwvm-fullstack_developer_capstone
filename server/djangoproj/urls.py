@@ -1,7 +1,7 @@
 """djangoproj URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+        path('about/', TemplateView.as_view(template_name="About.html")),
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('about/', TemplateView.as_view(template_name="About.html")),
     path('djangoapp/', include('djangoapp.urls')),
-    path('', TemplateView.as_view(template_name="Home.html")),
+        path('contact/', TemplateView.as_view(template_name="Contact.html")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
