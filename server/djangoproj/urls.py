@@ -22,5 +22,8 @@ from django.conf import settings
 urlpatterns = [
     path('about/', TemplateView.as_view(template_name="About.html")),
     path('djangoapp/', include('djangoapp.urls')),
+      path('admin/', admin.site.urls),
+          path('register/', TemplateView.as_view(template_name="index.html")),
         path('contact/', TemplateView.as_view(template_name="Contact.html")),
+        path('login/', TemplateView.as_view(template_name="index.html")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
